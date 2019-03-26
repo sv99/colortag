@@ -1,0 +1,7 @@
+base   colortag
+author jno
+email  jno@pisem.net
+date   2012-05-18
+name   colortag plugin
+desc   adds <colortag> syntax
+url    https://jno.undo.it/colortag.zip
