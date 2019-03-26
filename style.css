@@ -1,1 +1,63 @@
+/*
+ * colortag plugin extension - style additions
+ *
+ * @author  jno <jno@pisem.net>
+ * @link    http://jno.homeip.net/dokuwiki/doku/?id=colortag
+ * @derived code plugin by Christopher Smith
+ */
 
+/* layout */
+div.colortag {
+  width: 92%;
+  margin: 1em auto;
+  border: 1px solid;
+  padding: 4px;
+}
+
+div.colortag p, div.file p {
+  font-size: 90%;
+  margin: 0;
+  padding: 2px;
+}
+
+div.dokuwiki div.colortag pre.colortag {
+  margin: 4px 0 0 0;
+}
+
+/* colours */
+div.colortag {
+  border-color:  #bbd;
+  background: #e4ecf8;
+}
+
+div.colortag p {
+  background: #cad0ee;
+}
+
+table.colortag {
+  display: inline;
+  border-collapse: collapse;
+  border: none;
+  margin: 0px;
+  padding: 0px;
+  max-height: 0.5ex;
+  height: 0.5ex;
+}
+
+table.colortag * {
+  border-collapse: collapse;
+  margin: 0px;
+  padding: 0px;
+  border: none;
+  max-height: 0.5ex;
+  height: 0.5ex;
+}
+
+table.colortag td {
+  border: 1px solid black;
+  padding-left: 0.2ex;
+  padding-right: 0.2ex;
+  vertical-align: middle;
+}
+
+/* end colortag plugin style additions */
