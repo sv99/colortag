@@ -1,0 +1,23 @@
+colortag Plugin for DokuWiki
+
+adds <colortag> syntax
+
+The syntax is:
+
+COLORTAG ::= '<colortag>' TAGS '</colortag>'
+TAGS ::= TAG | TAG ',' TAGS
+TAG ::= COLOR | COLOR ':' CHAR | COLOR ':' CHAR ':' COLOR
+CHAR ::= <good char to display in the cell. for instance, '&bull;'>
+COLOR ::= <color name or '#'-prefixed hex color code>
+
+If there are two COLORs then the last one is foreground color.
+
+All documentation for this plugin can be found at
+https://jno.undo.it/colortag.zip
+
+If you install this plugin manually, make sure it is installed in
+lib/plugins/colortag/ - if the folder is called different it
+will not work!
+
+Please refer to http://www.dokuwiki.org/plugins for additional info
+on how to install plugins in DokuWiki.
