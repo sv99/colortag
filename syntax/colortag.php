@@ -44,7 +44,7 @@ class syntax_plugin_colortag_colortag extends DokuWiki_Syntax_Plugin {
       $this->Lexer->addExitPattern('</colortag>', 'plugin_colortag_colortag');
     }
 
-    public function handle($match, $state, $pos, &$handler){
+    public function handle($match, $state, $pos, Doku_Handler $handler){
         switch ($state) {
           case DOKU_LEXER_ENTER:
             $this->syntax = substr($match, 1);
@@ -62,7 +62,7 @@ class syntax_plugin_colortag_colortag extends DokuWiki_Syntax_Plugin {
         return false;
     }
 
-    public function render($mode, &$renderer, $data) {
+    public function render($mode,  Doku_Renderer $renderer, $data) {
       if($mode != 'xhtml') return false;
       if (count($data) == 3) {
         list($syntax, $attr, $content) = $data;
@@ -84,15 +84,15 @@ class syntax_plugin_colortag_colortag extends DokuWiki_Syntax_Plugin {
         $c = '*invalid*';
       }
       if( !(   preg_match('/^[a-z]+$/',$c)
-        or preg_match('/^#[0-9a-f]{6,6}$/i',$c)
-        or preg_match('/^#[0-9a-f]{3,3}$/i',$c)
+          or preg_match('/^#[0-9a-f]{6,6}$/i',$c)
+          or preg_match('/^#[0-9a-f]{3,3}$/i',$c)
       ) ) {
         $c = 'white;color:red';
         $f = 'X';
       } elseif(!is_null($l)) {
         if(    preg_match('/^[a-z]+$/',$l)
-        or preg_match('/^#[0-9a-f]{6,6}$/i',$l)
-        or preg_match('/^#[0-9a-f]{3,3}$/i',$l)
+          or preg_match('/^#[0-9a-f]{6,6}$/i',$l)
+          or preg_match('/^#[0-9a-f]{3,3}$/i',$l)
         ) { $c .= ';color:'.$l; } else { $c = 'white;color:red'; $f = 'Z'; }
       }
       $f = is_null($f) ? '&nbsp;' : strip_tags($f);
